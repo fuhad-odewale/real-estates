@@ -22,6 +22,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 
+function showLargerGallery() {
+  document.getElementById('largerGallery').style.display = 'flex';
+}
+
+function closeLargerGallery() {
+  document.getElementById('largerGallery').style.display = 'none';
+}
+
+let currentImageIndex = 0;
+const galleryImages = document.querySelectorAll('.larger-gallery img');
+
+function navigateGallery(direction) {
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) {
+      currentImageIndex = galleryImages.length - 1;
+  } else if (currentImageIndex >= galleryImages.length) {
+      currentImageIndex = 0;
+  }
+
+  for (let i = 0; i < galleryImages.length; i++) {
+      galleryImages[i].style.display = 'none';
+  }
+  galleryImages[currentImageIndex].style.display = 'block';
+}
+
 (function ($) {
   "use strict";
 

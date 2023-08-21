@@ -40,5 +40,3 @@ if ( $name && $senderEmail && $message ) {
 }else {
 	echo "<div class='inner error'><p class='error'>Something went wrong. Please try again.</p></div><!-- /.inner -->";
 }
-
-?>
